@@ -13,7 +13,7 @@ public class CarroController {
 
     @RequestMapping("/carro")
     public List<Carro> monstrarTodos() {
-	System.out.println("mostrou");
+	System.out.println("mostrou" + repository.findAll());
 	List<Carro> carros = repository.findAll();
 	return carros;
     }
@@ -25,18 +25,18 @@ public class CarroController {
 	c1.setCor("Laranja");
 	c1.setMarca("Nissan");
 	repository.save(c1);
-	System.out.println("Adicionado" + c1.getModelo());
+	System.out.println("Adicionado " + c1.getModelo());
 	Carro c2 = new Carro();
 	c2.setModelo("Skyline");
 	c2.setCor("Amarelo");
 	c2.setMarca("Nissan");
 	repository.save(c2);
-	System.out.println("Adicionado" + c2.getModelo());
+	System.out.println("Adicionado " + c2.getModelo());
     }
 
     @RequestMapping("/carro/remover")
     public void remover() {
-	System.out.println("Removeu" + monstrarTodos());
+	System.out.println("Removeu " + monstrarTodos());
 	repository.deleteAll();
     }
 }
