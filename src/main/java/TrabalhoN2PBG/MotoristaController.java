@@ -20,16 +20,16 @@ public class MotoristaController {
 
     @RequestMapping("/motorista/adicionar")
     public void adicionar() {
-	Motorista c1 = new Motorista();
-	c1.setNome("Allan");
-	c1.setCarro(null);
-	repository.save(c1);
-	System.out.println("Adicionado " + c1.getNome());
-	Motorista c2 = new Motorista();
-	c2.setNome("Murillo");
-	c2.setCarro(null);
-	repository.save(c2);
-	System.out.println("Adicionado " + c2.getNome());
+	Motorista m1 = new Motorista();
+	m1.setNome("Allan");
+	m1.setCarro(null);
+	repository.save(m1);
+	System.out.println("Adicionado " + m1.getNome());
+	Motorista m2 = new Motorista();
+	m2.setNome("Murillo");
+	m2.setCarro(null);
+	repository.save(m2);
+	System.out.println("Adicionado " + m2.getNome());
     }
 
     @RequestMapping("/motorista/remover")

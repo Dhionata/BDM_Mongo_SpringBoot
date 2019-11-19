@@ -20,18 +20,18 @@ public class SolicitacaoController {
 
     @RequestMapping("/solicitacao/adicionar")
     public void adicionar() {
-	Solicitacao c1 = new Solicitacao();
-	c1.setCliente(null);
-	c1.setMotorista(null);
-	c1.setValor(0);
-	repository.save(c1);
-	System.out.println("Adicionado [Solicitações]" + c1.getId());
-	Solicitacao c2 = new Solicitacao();
-	c2.setCliente(null);
-	c2.setMotorista(null);
-	c2.setValor(0);
+	Solicitacao s1 = new Solicitacao();
+	s1.setCliente(null);
+	s1.setMotorista(null);
+	s1.setValor(0);
+	repository.save(s1);
+	System.out.println("Adicionado [Solicitações]" + s1.getId());
+	Solicitacao s2 = new Solicitacao();
+	s2.setCliente(null);
+	s2.setMotorista(null);
+	s2.setValor(0);
 
-	System.out.println("Adicionado [Solicitações]" + c2.getId());
+	System.out.println("Adicionado [Solicitações]" + s2.getId());
     }
 
     @RequestMapping("/solicitacao/remover")
