@@ -1,4 +1,4 @@
-package TrabalhoN2PBG;
+package br.com.objetos;
 
 import java.util.List;
 

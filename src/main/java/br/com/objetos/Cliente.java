@@ -1,15 +1,15 @@
-package TrabalhoN2PBG;
+package br.com.objetos;
 
 import org.springframework.data.annotation.Id;
 
 import lombok.Data;
 
 @Data
-public class Motorista {
+public class Cliente {
     @Id
     private String id;
     private String nome;
-
-    private Carro carro;
+    private String telefone;
+    private String local;
 
 }

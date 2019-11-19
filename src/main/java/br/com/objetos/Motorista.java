@@ -1,13 +1,15 @@
-package Aula08.HellouSpringBoot;
+package br.com.objetos;
 
 import org.springframework.data.annotation.Id;
 
 import lombok.Data;
 
 @Data
-public class Aluno {
+public class Motorista {
     @Id
-    public String id;
+    private String id;
     private String nome;
-    private Integer idade;
+
+    private Carro carro;
+
 }

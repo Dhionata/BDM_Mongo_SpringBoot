@@ -1,4 +1,4 @@
-package Aula08.HellouSpringBoot;
+package br.com.objetos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
