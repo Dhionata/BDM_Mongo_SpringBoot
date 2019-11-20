@@ -1,6 +1,5 @@
 package br.com.objetos;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +12,11 @@ public class CarroController {
     private CarroRepository repository;
     private Carro c1 = new Carro();
     private Carro c2 = new Carro();
-    private List<Carro> carros = new ArrayList<Carro>();
 
     @RequestMapping("/carro")
     public List<Carro> monstrarTodos() {
 	System.out.println("mostrou" + repository.findAll());
-	carros = repository.findAll();
-	return carros;
+	return repository.findAll();
     }
 
     @RequestMapping("/carro/adicionar")
@@ -47,8 +44,7 @@ public class CarroController {
     public Carro findByModelo(String modelo) {
 	Carro temp = null;
 	boolean oi = false;
-	carros = repository.findAll();
-	for (Carro c : carros) {
+	for (Carro c : repository.findAll()) {
 	    if (c.getModelo() == modelo) {
 		temp = c;
 		oi = true;
