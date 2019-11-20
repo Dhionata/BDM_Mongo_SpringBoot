@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class MotoristaController {
     @Autowired
     private MotoristaRepository repository;
-    private CarroController carros = new CarroController();
+    @Autowired
+    private CarroController carros;
+    @Autowired
     private Motorista m1 = new Motorista();
+    @Autowired
     private Motorista m2 = new Motorista();
 
     @RequestMapping("/motorista")

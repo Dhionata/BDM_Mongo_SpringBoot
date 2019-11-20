@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CarroController {
     @Autowired
     private CarroRepository repository;
-    private Carro c1 = new Carro();
-    private Carro c2 = new Carro();
+    private Carro c1;
+    private Carro c2;
 
     @RequestMapping("/carro")
     public List<Carro> monstrarTodos() {
@@ -21,7 +21,6 @@ public class CarroController {
 
     @RequestMapping("/carro/adicionar")
     public void adicionar() {
-
 	c1.setModelo("350z");
 	c1.setCor("Laranja");
 	c1.setMarca("Nissan");
@@ -42,6 +41,7 @@ public class CarroController {
     }
 
     public Carro findByModelo(String modelo) {
+	this.adicionar();
 	Carro temp = null;
 	boolean oi = false;
 	for (Carro c : repository.findAll()) {
