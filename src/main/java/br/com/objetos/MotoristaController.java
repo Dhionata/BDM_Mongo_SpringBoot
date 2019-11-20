@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MotoristaController {
     @Autowired
     private MotoristaRepository repository;
+    private CarroController carros = new CarroController();
+    private Motorista m1 = new Motorista();
+    private Motorista m2 = new Motorista();
 
     @RequestMapping("/motorista")
     public List<Motorista> monstrarTodos() {
@@ -20,14 +23,13 @@ public class MotoristaController {
 
     @RequestMapping("/motorista/adicionar")
     public void adicionar() {
-	Motorista m1 = new Motorista();
 	m1.setNome("Allan");
-	m1.setCarro(null);
+	m1.setCarro(carros.findByModelo("Skyline"));
 	repository.save(m1);
 	System.out.println("Adicionado " + m1.getNome());
-	Motorista m2 = new Motorista();
+
 	m2.setNome("Murillo");
-	m2.setCarro(null);
+	m2.setCarro(carros.findByModelo("Skyline"));
 	repository.save(m2);
 	System.out.println("Adicionado " + m2.getNome());
     }

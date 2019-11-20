@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClienteController {
     @Autowired
     private ClienteRepository repository;
+    public Cliente cl1 = new Cliente();
+    public Cliente cl2 = new Cliente();
 
     @RequestMapping("/cliente")
     public List<Cliente> monstrarTodos() {
@@ -20,13 +22,13 @@ public class ClienteController {
 
     @RequestMapping("/cliente/adicionar")
     public void adicionar() {
-	Cliente cl1 = new Cliente();
+
 	cl1.setNome("Marcos");
 	cl1.setTelefone("(62)99999-9999");
 	cl1.setLocal("Goiânia");
 	repository.save(cl1);
 	System.out.println("Adicionado " + cl1.getNome());
-	Cliente cl2 = new Cliente();
+
 	cl2.setNome("Murillo");
 	cl2.setTelefone("(62)98888-8888");
 	cl2.setLocal("Edeia");
