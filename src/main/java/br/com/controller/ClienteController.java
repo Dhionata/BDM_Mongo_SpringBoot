@@ -26,23 +26,22 @@ public class ClienteController {
 
     @RequestMapping("/cliente/adicionar")
     public void adicionar() {
-
 	cl1.setNome("Marcos");
 	cl1.setTelefone("(62)99999-9999");
 	cl1.setLocal("Goiânia");
 	repository.save(cl1);
-	System.out.println("Adicionado " + cl1.getNome());
+	System.out.println("Adicionado \n" + cl1);
 
 	cl2.setNome("Murillo");
 	cl2.setTelefone("(62)98888-8888");
 	cl2.setLocal("Edeia");
 	repository.save(cl2);
-	System.out.println("Adicionado " + cl2.getNome());
+	System.out.println("Adicionado \n" + cl2);
     }
 
     @RequestMapping("/cliente/remover")
     public void remover() {
-	System.out.println("Removeu " + monstrarTodos());
+	System.out.println("Removeu \n" + monstrarTodos());
 	repository.deleteAll();
     }
 }

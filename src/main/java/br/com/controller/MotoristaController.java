@@ -17,32 +17,38 @@ public class MotoristaController {
     private MotoristaRepository repository;
     @Autowired
     private CarroRepository carros;
+    @Autowired
+    private CarroController Cc = new CarroController();
     private Motorista m1 = new Motorista();
     private Motorista m2 = new Motorista();
 
     @RequestMapping("/motorista")
     public List<Motorista> monstrarTodos() {
-	System.out.println("mostrou" + repository.findAll());
+	System.out.println("mostrou \n" + repository.findAll());
 	List<Motorista> clientes = repository.findAll();
 	return clientes;
     }
 
     @RequestMapping("/motorista/adicionar")
     public void adicionar() {
+	Cc.remover();
+	System.out.println("Carros excluídos para não duplicação!\n");
+	Cc.adicionar();
+	System.out.println("Criado o CarroController\n");
 	m1.setNome("Allan");
 	m1.setCarro(carros.findByModelo("Skyline"));
 	repository.save(m1);
-	System.out.println("Adicionado " + m1.getNome());
+	System.out.println("Adicionado " + m1);
 
 	m2.setNome("Murillo");
 	m2.setCarro(carros.findByModelo("Skyline"));
 	repository.save(m2);
-	System.out.println("Adicionado " + m2.getNome());
+	System.out.println("Adicionado " + m2);
     }
 
     @RequestMapping("/motorista/remover")
     public void remover() {
-	System.out.println("Removeu " + monstrarTodos());
+	System.out.println("Removeu \n" + monstrarTodos());
 	repository.deleteAll();
     }
 }
