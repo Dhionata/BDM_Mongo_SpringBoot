@@ -17,7 +17,7 @@ public class SolicitacaoController {
     @Autowired
     private SolicitacaoRepository Srepository;
     @Autowired
-    private ClienteRepository Crepository;
+    private ClienteRepository CliRepository;
     @Autowired
     private MotoristaRepository Mrepository;
     @Autowired
@@ -29,13 +29,14 @@ public class SolicitacaoController {
 
     @RequestMapping("/solicitacao")
     public List<Solicitacao> monstrarTodos() {
-	System.out.println("mostrou [Solicitações]\n" + Srepository.findAll());
+	System.out.println(Srepository.findAll());
 	List<Solicitacao> Solicitacao = Srepository.findAll();
 	return Solicitacao;
     }
 
     @RequestMapping("/solicitacao/adicionar")
     public void adicionar() {
+	this.remover();
 	Mc.remover();
 	System.out.println("Motoristas Excluídos para não duplicação!\n");
 	Clic.remover();
@@ -44,15 +45,16 @@ public class SolicitacaoController {
 	System.out.println("Criado motorista Controller\n");
 	Clic.adicionar();
 	System.out.println("Criado o cliente Controller\n");
-	s1.setCliente(Crepository.findByNome("Marcos"));
+	s1.setCliente(CliRepository.findByNome("Marcos"));
 	s1.setMotorista(Mrepository.findByNome("Allan"));
-	s1.setValor(300);
+	s1.calculaKM(300);
 	Srepository.save(s1);
 	System.out.println("Adicionado [Solicitação]\n" + s1);
-	s2.setCliente(null);
-	s2.setMotorista(null);
-	s2.setValor(0);
 
+	s2.setCliente(CliRepository.findByNome("Bruna"));
+	s2.setMotorista(Mrepository.findByNome("Murillo"));
+	s2.calculaKM(100);
+	Srepository.save(s2);
 	System.out.println("Adicionado [Solicitação]\n" + s2);
     }
 

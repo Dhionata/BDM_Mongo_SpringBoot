@@ -19,7 +19,7 @@ public class CarroController {
 
     @RequestMapping("/carro")
     public List<Carro> monstrarTodos() {
-	System.out.println("mostrou\n" + repository.findAll());
+	System.out.println(repository.findAll());
 	return repository.findAll();
     }
 

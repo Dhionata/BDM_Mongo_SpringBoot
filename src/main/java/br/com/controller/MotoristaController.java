@@ -24,7 +24,7 @@ public class MotoristaController {
 
     @RequestMapping("/motorista")
     public List<Motorista> monstrarTodos() {
-	System.out.println("mostrou \n" + repository.findAll());
+	System.out.println(repository.findAll());
 	List<Motorista> clientes = repository.findAll();
 	return clientes;
     }
@@ -41,7 +41,7 @@ public class MotoristaController {
 	System.out.println("Adicionado " + m1);
 
 	m2.setNome("Murillo");
-	m2.setCarro(carros.findByModelo("Skyline"));
+	m2.setCarro(carros.findByModelo("350z"));
 	repository.save(m2);
 	System.out.println("Adicionado " + m2);
     }
