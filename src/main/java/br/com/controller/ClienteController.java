@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.App.ClienteRepository;
 import br.com.objetos.Cliente;
-import br.com.repository.ClienteRepository;
 
 @RestController
 public class ClienteController {

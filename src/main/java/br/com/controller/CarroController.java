@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.App.CarroRepository;
 import br.com.objetos.Carro;
-import br.com.repository.CarroRepository;
 
 @RestController
 public class CarroController {
