@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ClienteController {
+    // AutoWired necessário em TODOS os repositórios
     @Autowired
     private ClienteRepository repository;
     public Cliente cl1 = new Cliente();

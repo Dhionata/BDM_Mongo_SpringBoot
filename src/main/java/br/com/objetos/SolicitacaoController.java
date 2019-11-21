@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SolicitacaoController {
+    // AutoWired necessário em TODOS os repositórios
     @Autowired
     private SolicitacaoRepository repository;
     private Solicitacao s1 = new Solicitacao();

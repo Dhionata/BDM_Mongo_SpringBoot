@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MotoristaController {
+    // AutoWired necessário em TODOS os repositórios
     @Autowired
     private MotoristaRepository repository;
     @Autowired
-    private CarroController carros;
-    @Autowired
+    private CarroRepository carros;
     private Motorista m1 = new Motorista();
-    @Autowired
     private Motorista m2 = new Motorista();
 
     @RequestMapping("/motorista")

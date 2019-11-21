@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CarroController {
+    // AutoWired necessário em TODOS os repositórios
     @Autowired
     private CarroRepository repository;
-    private Carro c1;
-    private Carro c2;
+    private Carro c1 = new Carro();
+    private Carro c2 = new Carro();
 
     @RequestMapping("/carro")
     public List<Carro> monstrarTodos() {
@@ -38,26 +39,5 @@ public class CarroController {
     public void remover() {
 	System.out.println("Removeu " + monstrarTodos());
 	repository.deleteAll();
-    }
-
-    public Carro findByModelo(String modelo) {
-	this.adicionar();
-	Carro temp = null;
-	boolean oi = false;
-	for (Carro c : repository.findAll()) {
-	    if (c.getModelo() == modelo) {
-		temp = c;
-		oi = true;
-	    }
-	}
-	if (oi) {
-	    return temp;
-	} else
-	    return null;
-    }
-
-    public List<Carro> findByMarca(String marca) {
-	// TODO Auto-generated method stub
-	return null;
     }
 }
