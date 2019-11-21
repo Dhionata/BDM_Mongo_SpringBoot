@@ -1,4 +1,4 @@
-package br.com.objetos;
+package br.com.App;
 
 import java.util.List;
 

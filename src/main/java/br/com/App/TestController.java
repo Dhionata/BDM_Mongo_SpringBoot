@@ -1,4 +1,4 @@
-package br.com.objetos;
+package br.com.App;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

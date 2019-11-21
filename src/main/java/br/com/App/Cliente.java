@@ -1,4 +1,4 @@
-package br.com.objetos;
+package br.com.App;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -7,10 +7,12 @@ import lombok.Data;
 
 @Data
 @Document
-public class Carro {
+public class Cliente {
+
     @Id
     private String id;
-    private String modelo;
-    private String marca;
-    private String cor;
+    private String nome;
+    private String telefone;
+    private String local;
+
 }
