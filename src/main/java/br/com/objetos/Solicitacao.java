@@ -20,4 +20,10 @@ public class Solicitacao {
     public void calculaKM(double qtd_rodada) {
 	this.valor = qtd_rodada * 3.75;
     }
+
+    @Override
+    public String toString() {
+	return "\n\n--Solicitacao--\nID : " + getId() + "\nMotorista : " + getMotorista() + "\nCliente : "
+		+ getCliente() + "\nValor : " + getValor();
+    }
 }

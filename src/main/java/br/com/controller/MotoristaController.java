@@ -31,24 +31,26 @@ public class MotoristaController {
 
     @RequestMapping("/motorista/adicionar")
     public void adicionar() {
-	Cc.remover();
-	System.out.println("Carros excluídos para não duplicação!\n");
+	this.remover();
+	System.out.println("\nMotoristas Excluídos para não duplicação!\n");
+
 	Cc.adicionar();
-	System.out.println("Criado o CarroController\n");
+	System.out.println("\nCriado o CarroController\n");
+
 	m1.setNome("Allan");
 	m1.setCarro(carros.findByModelo("Skyline"));
 	repository.save(m1);
-	System.out.println("Adicionado " + m1);
+	System.out.println("\nAdicionado " + m1);
 
 	m2.setNome("Murillo");
 	m2.setCarro(carros.findByModelo("350z"));
 	repository.save(m2);
-	System.out.println("Adicionado " + m2);
+	System.out.println("\nAdicionado " + m2);
     }
 
     @RequestMapping("/motorista/remover")
     public void remover() {
-	System.out.println("Removeu \n" + monstrarTodos());
+	System.out.println("\nRemoveu \n" + monstrarTodos());
 	repository.deleteAll();
     }
 }

@@ -13,4 +13,10 @@ public class Carro {
     private String modelo;
     private String marca;
     private String cor;
+
+    @Override
+    public String toString() {
+	return "\n\n--Carro--\nID :" + getId() + "\nModelo : " + getModelo() + "\nMarca : " + getMarca() + "\nCor : "
+		+ getCor();
+    }
 }

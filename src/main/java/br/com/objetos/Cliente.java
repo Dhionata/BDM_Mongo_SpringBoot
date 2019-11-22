@@ -15,4 +15,10 @@ public class Cliente {
     private String telefone;
     private String local;
 
+    @Override
+    public String toString() {
+	return "\n\n--Cliente--\nID : " + getId() + "\nNome : " + getNome() + "\nTelefone : " + getTelefone()
+		+ "\nLocal : " + getLocal();
+    }
+
 }

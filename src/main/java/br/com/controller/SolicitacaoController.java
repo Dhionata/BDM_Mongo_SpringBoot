@@ -37,30 +37,30 @@ public class SolicitacaoController {
     @RequestMapping("/solicitacao/adicionar")
     public void adicionar() {
 	this.remover();
-	Mc.remover();
-	System.out.println("Motoristas Excluídos para não duplicação!\n");
-	Clic.remover();
-	System.out.println("Clientes Excluídos para não duplicação\n");
+	System.out.println("\nSolicitação removida para não duplicação!");
+
 	Mc.adicionar();
-	System.out.println("Criado motorista Controller\n");
+	System.out.println("\nCriado motorista Controller\n");
+
 	Clic.adicionar();
-	System.out.println("Criado o cliente Controller\n");
+	System.out.println("\nCriado o cliente Controller\n");
+
 	s1.setCliente(CliRepository.findByNome("Marcos"));
 	s1.setMotorista(Mrepository.findByNome("Allan"));
 	s1.calculaKM(300);
 	Srepository.save(s1);
-	System.out.println("Adicionado [Solicitação]\n" + s1);
+	System.out.println("\nAdicionado [Solicitação]\n" + s1);
 
 	s2.setCliente(CliRepository.findByNome("Bruna"));
 	s2.setMotorista(Mrepository.findByNome("Murillo"));
 	s2.calculaKM(100);
 	Srepository.save(s2);
-	System.out.println("Adicionado [Solicitação]\n" + s2);
+	System.out.println("\nAdicionado [Solicitação]\n" + s2);
     }
 
     @RequestMapping("/solicitacao/remover")
     public void remover() {
-	System.out.println("Removeu [Solicitações]\n" + monstrarTodos());
+	System.out.println("\nRemoveu [Solicitações]\n" + monstrarTodos());
 	Srepository.deleteAll();
     }
 }

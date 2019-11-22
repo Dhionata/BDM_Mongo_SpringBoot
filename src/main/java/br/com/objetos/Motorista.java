@@ -16,4 +16,9 @@ public class Motorista {
     @DBRef
     private Carro carro;
 
+    @Override
+    public String toString() {
+	return "\n\n--Motorista--\nID : " + getId() + "\nNome : " + getNome() + "\nCarro : " + getCarro();
+    }
+
 }
