@@ -19,15 +19,10 @@ public class MotoristaController {
     private CarroRepository carros;
     @Autowired
     private CarroController Cc = new CarroController();
-    private Motorista m1 = new Motorista();
-    private Motorista m2 = new Motorista();
 
-    @RequestMapping("/motorista")
-    public List<Motorista> monstrarTodos() {
-	System.out.println(repository.findAll());
-	List<Motorista> clientes = repository.findAll();
-	return clientes;
-    }
+    private Motorista m1 = new Motorista();
+
+    private Motorista m2 = new Motorista();
 
     @RequestMapping("/motorista/adicionar")
     public void adicionar() {
@@ -46,6 +41,13 @@ public class MotoristaController {
 	m2.setCarro(carros.findByModelo("350z"));
 	repository.save(m2);
 	System.out.println("\nAdicionado " + m2);
+    }
+
+    @RequestMapping("/motorista")
+    public List<Motorista> monstrarTodos() {
+	System.out.println(repository.findAll());
+	List<Motorista> clientes = repository.findAll();
+	return clientes;
     }
 
     @RequestMapping("/motorista/remover")

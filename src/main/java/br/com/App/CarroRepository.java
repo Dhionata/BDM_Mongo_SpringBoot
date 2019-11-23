@@ -9,7 +9,7 @@ import br.com.objetos.Carro;
 
 @Repository
 public interface CarroRepository extends MongoRepository<Carro, String> {
-    public Carro findByModelo(String modelo);
+    List<Carro> findByMarca(String marca);
 
-    public List<Carro> findByMarca(String marca);
+    Carro findByModelo(String modelo);
 }

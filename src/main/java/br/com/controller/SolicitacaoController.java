@@ -24,20 +24,15 @@ public class SolicitacaoController {
     private MotoristaController Mc = new MotoristaController();
     @Autowired
     private ClienteController Clic = new ClienteController();
-    private Solicitacao s1 = new Solicitacao();
-    private Solicitacao s2 = new Solicitacao();
 
-    @RequestMapping("/solicitacao")
-    public List<Solicitacao> monstrarTodos() {
-	System.out.println(Srepository.findAll());
-	List<Solicitacao> Solicitacao = Srepository.findAll();
-	return Solicitacao;
-    }
+    private Solicitacao s1 = new Solicitacao();
+
+    private Solicitacao s2 = new Solicitacao();
 
     @RequestMapping("/solicitacao/adicionar")
     public void adicionar() {
 	this.remover();
-	System.out.println("\nSolicitação removida para não duplicação!");
+	System.out.println("\nSolicitação removida para não duplicação!\n");
 
 	Mc.adicionar();
 	System.out.println("\nCriado motorista Controller\n");
@@ -56,6 +51,14 @@ public class SolicitacaoController {
 	s2.calculaKM(100);
 	Srepository.save(s2);
 	System.out.println("\nAdicionado [Solicitação]\n" + s2);
+
+    }
+
+    @RequestMapping("/solicitacao")
+    public List<Solicitacao> monstrarTodos() {
+	System.out.println(Srepository.findAll());
+	List<Solicitacao> Solicitacao = Srepository.findAll();
+	return Solicitacao;
     }
 
     @RequestMapping("/solicitacao/remover")

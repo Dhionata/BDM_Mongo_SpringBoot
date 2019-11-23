@@ -11,17 +11,13 @@ import br.com.objetos.Carro;
 
 @RestController
 public class CarroController {
-    // AutoWired necessário em TODOS os repositórios
+    // Autowired necessário em TODOS os repositórios
     @Autowired
     private CarroRepository repository;
-    private Carro c1 = new Carro();
-    private Carro c2 = new Carro();
 
-    @RequestMapping("/carro")
-    public List<Carro> monstrarTodos() {
-	System.out.println(repository.findAll());
-	return repository.findAll();
-    }
+    private Carro c1 = new Carro();
+
+    private Carro c2 = new Carro();
 
     @RequestMapping("/carro/adicionar")
     public void adicionar() {
@@ -39,6 +35,12 @@ public class CarroController {
 	c2.setMarca("Nissan");
 	repository.save(c2);
 	System.out.println("\nAdicionado \n" + c2);
+    }
+
+    @RequestMapping("/carro")
+    public List<Carro> monstrarTodos() {
+	System.out.println(repository.findAll());
+	return repository.findAll();
     }
 
     @RequestMapping("/carro/remover")
