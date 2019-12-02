@@ -13,12 +13,15 @@ public class Motorista {
     @Id
     private String id;
     private String nome;
+    private boolean banido;
+
     @DBRef
     private Carro carro;
 
     @Override
     public String toString() {
-	return "\n\n--Motorista--\nID : " + getId() + "\nNome : " + getNome() + "\nCarro : " + getCarro();
+	return "\n\n--Motorista--\nID : " + getId() + "\nNome : " + getNome() + "\nBanido: " + isBanido() + "\nCarro : "
+		+ getCarro();
     }
 
 }

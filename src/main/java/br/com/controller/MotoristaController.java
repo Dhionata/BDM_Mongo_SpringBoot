@@ -32,15 +32,18 @@ public class MotoristaController {
 	Cc.adicionar();
 	System.out.println("\nCriado o CarroController\n");
 
-	m1.setNome("Allan");
-	m1.setCarro(carros.findByModelo("Skyline"));
-	repository.save(m1);
-	System.out.println("\nAdicionado " + m1);
-
-	m2.setNome("Murillo");
-	m2.setCarro(carros.findByModelo("350z"));
-	repository.save(m2);
-	System.out.println("\nAdicionado " + m2);
+	if (m1.isBanido() == false) {
+	    m1.setNome("Allan");
+	    m1.setCarro(carros.findByModelo("Skyline"));
+	    repository.save(m1);
+	    System.out.println("\nAdicionado " + m1);
+	}
+	if (m2.isBanido() == false) {
+	    m2.setNome("Murillo");
+	    m2.setCarro(carros.findByModelo("350z"));
+	    repository.save(m2);
+	    System.out.println("\nAdicionado " + m2);
+	}
     }
 
     @RequestMapping("/motorista")

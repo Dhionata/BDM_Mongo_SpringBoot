@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EntityScan(basePackages = { "br.com.objetos" })
 @ComponentScan(basePackages = { "br.com.controller" })
+
 public class App {
 
     public static void main(String[] args) {
