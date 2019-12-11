@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = { "br.com.controller" })
 
 public class App {
-
+    // Test
     public static void main(String[] args) {
 	System.out.println("Iniciando Spring Boot...");
 	SpringApplication.run(App.class, args);
