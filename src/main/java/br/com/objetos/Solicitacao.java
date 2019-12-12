@@ -15,6 +15,7 @@ public class Solicitacao {
     private Motorista motorista;
     @DBRef
     private Cliente cliente;
+    @SuppressWarnings("unused")
     private double valor;
 
     public void calculaKM(double qtd_rodada) {
